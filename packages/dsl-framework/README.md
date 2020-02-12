@@ -1,14 +1,14 @@
 <!--- destination qa rewrite begin -->
 ### QA monorepo
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
-[![CircleCI](https://circleci.com/gh/vidaxl-com/cowlog/tree/master.svg?style=svg)](https://circleci.com/gh/vidaxl-com/cowlog/tree/master)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/d3fce811aecbe5c73ffb/test_coverage)](https://codeclimate.com/github/vidaxl-com/cowlog/test_coverage)
-[![Maintainability](https://api.codeclimate.com/v1/badges/d3fce811aecbe5c73ffb/maintainability)](https://codeclimate.com/github/vidaxl-com/cowlog/maintainability)
-[![Greenkeeper badge](https://badges.greenkeeper.io/vidaxl-com/cowlog.svg)](https://greenkeeper.io/)
-[![Known Vulnerabilities](https://snyk.io/test/github/vidaxl-com/cowlog/badge.svg?targetFile=packages%2Fdsl-framework%2Fpackage.json)](https://snyk.io/test/github/vidaxl-com/cowlog?targetFile=packages%2Fdsl-framework%2Fpackage.json)
+[![CircleCI](https://circleci.com/gh/311ecode/cowlog/tree/master.svg?style=svg)](https://circleci.com/gh/311ecode/cowlog/tree/master)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/a25454343626ec0c7a70/test_coverage)](https://codeclimate.com/github/311ecode/cowlog/test_coverage)
+[![Maintainability](https://api.codeclimate.com/v1/badges/a25454343626ec0c7a70/maintainability)](https://codeclimate.com/github/311ecode/cowlog/maintainability)
+[![Greenkeeper badge](https://badges.greenkeeper.io/311ecode/cowlog.svg)](https://greenkeeper.io/)
+[![Known Vulnerabilities](https://snyk.io/test/github/311ecode/cowlog/badge.svg?targetFile=packages%2Fdsl-framework%2Fpackage.json)](https://snyk.io/test/github/311ecode/cowlog?targetFile=packages%2Fdsl-framework%2Fpackage.json)
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fvidaxl-com%2Fcowlog.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fvidaxl-com%2Fcowlog?ref=badge_shield)
 
-[![HitCount](http://hits.dwyl.com/vidaxl.com/cowlog.svg)](http://hits.dwyl.com/vidaxl-com/cowlog)
+[![HitCount](http://hits.dwyl.com/vidaxl.com/cowlog.svg)](http://hits.dwyl.com/311ecode/cowlog)
 [![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lernajs.io/)
 <!--- destination qa rewrite end -->
 
@@ -25,7 +25,7 @@ Moreover, use it for different kind of tasks. I started
 educating myself to LISP and tying to transpiring back to my daily work life some practical concept,
 using data as code and creating small domain specific languages, this is an attempt for that.
 
-I wrote **[cowlog](https://github.com/vidaxl-com/cowlog/tree/master/packages/cowlog)** and the central point of the application
+I wrote **[cowlog](https://github.com/311ecode/cowlog/tree/master/packages/cowlog)** and the central point of the application
 is the usage of its specific small DSL trough chained function calls. The code that creates this possibility was
 complex and precise, really too hard to understand, maintain develop and refactor; entirely the worst kind. The idea
 was if we extract this necessarily complex monster into and external reusable library.

@@ -25,7 +25,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vidaxl-com/cowlog.git"
+    "url": "https://github.com/vidaxl-com/cowlog/tree/master/packages/dsl-framework"
   },
   "keywords": [
     "curry",
@@ -59,17 +59,17 @@
   "author": "Imre Toth",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/vidaxl-com/cowlog/issues"
+    "url": "https://github.com/311ecode/cowlog/issues"
   },
-  "homepage": "https://github.com/vidaxl-com/cowlog#readme",
+  "homepage": "https://github.com/vidaxl-com/cowlog/tree/master/packages/dsl-framework",
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.7.0",
-    "browserify": "^16.2.3",
+    "browserify": "^16.5.0",
     "chai": "^4.2.0",
-    "depcheck": "^0.8.0",
-    "eslint-config-standard": "^12.0.0",
-    "eslint-plugin-import": "^2.17.3",
+    "depcheck": "^0.9.2",
+    "eslint-config-standard": "^14.1.0",
+    "eslint-plugin-import": "^2.20.1",
     "eslint-plugin-node": "^9.1.0",
     "eslint-plugin-promise": "^4.1.1",
     "eslint-plugin-standard": "^4.0.0",
