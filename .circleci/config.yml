@@ -15,7 +15,10 @@ references:
 
     steps:
       - checkout
-      - run : git config --global user.email "you@example.com" && git config --global user.name "yn"
+      - run: apt-get update && apt-get -y install expect
+      - run: expect -c "spawn ssh-add - <<< "${SSH_KEY}" expect -re \"Enter passphrase for (stdin):\"; send \"n\";"
+      - run: ssh-keyscan -H github.com >> ~/.ssh/known_hosts
+      - run: git config --global user.email "you@example.com" && git config --global user.name "yn"
       - run: npm install
       - run: npm run test-all && echo 1 > /tmp/test
       - store_artifacts:
@@ -23,7 +26,6 @@ references:
           destination: prefix
       - store_test_results:
           path: coverage/lcov-report/
-
       - run: node_modules/codeclimate-test-reporter/bin/codeclimate.js < ./coverage/lcov.info && echo 1 > /tmp/coverage
 
 
