@@ -3,14 +3,14 @@ An array focused DSL
 <!--- destination qa rewrite begin -->
 ### QA monorepo
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
-[![CircleCI](https://circleci.com/gh/vidaxl-com/cowlog/tree/master.svg?style=svg)](https://circleci.com/gh/vidaxl-com/cowlog/tree/master)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/d3fce811aecbe5c73ffb/test_coverage)](https://codeclimate.com/github/vidaxl-com/cowlog/test_coverage)
-[![Maintainability](https://api.codeclimate.com/v1/badges/d3fce811aecbe5c73ffb/maintainability)](https://codeclimate.com/github/vidaxl-com/cowlog/maintainability)
-[![Greenkeeper badge](https://badges.greenkeeper.io/vidaxl-com/cowlog.svg)](https://greenkeeper.io/)
-[![Known Vulnerabilities](https://snyk.io/test/github/vidaxl-com/cowlog/badge.svg?targetFile=packages%2Fdsl-framework%2Fpackage.json)](https://snyk.io/test/github/vidaxl-com/cowlog?targetFile=packages%2Fdsl-framework%2Fpackage.json)
+[![CircleCI](https://circleci.com/gh/311ecode/cowlog/tree/master.svg?style=svg)](https://circleci.com/gh/311ecode/cowlog/tree/master)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/a25454343626ec0c7a70/test_coverage)](https://codeclimate.com/github/311ecode/cowlog/test_coverage)
+[![Maintainability](https://api.codeclimate.com/v1/badges/a25454343626ec0c7a70/maintainability)](https://codeclimate.com/github/311ecode/cowlog/maintainability)
+[![Greenkeeper badge](https://badges.greenkeeper.io/311ecode/cowlog.svg)](https://greenkeeper.io/)
+[![Known Vulnerabilities](https://snyk.io/test/github/311ecode/cowlog/badge.svg?targetFile=packages%2Fdsl-framework%2Fpackage.json)](https://snyk.io/test/github/311ecode/cowlog?targetFile=packages%2Fdsl-framework%2Fpackage.json)
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fvidaxl-com%2Fcowlog.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fvidaxl-com%2Fcowlog?ref=badge_shield)
 
-[![HitCount](http://hits.dwyl.com/vidaxl.com/cowlog.svg)](http://hits.dwyl.com/vidaxl-com/cowlog)
+[![HitCount](http://hits.dwyl.com/vidaxl.com/cowlog.svg)](http://hits.dwyl.com/311ecode/cowlog)
 [![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lernajs.io/)
 <!--- destination qa rewrite end -->
 
@@ -21,7 +21,7 @@ npm install array-dsl --save
 
 # Motivation
 This is project helps you to deal with arrays in a more functional/DLS way. This is also a presentation about how easy is to craft your own dsl with the help of the
-**[dsl-framework](https://github.com/vidaxl-com/cowlog/tree/master/packages/dsl-framework)**
+**[dsl-framework](https://github.com/311ecode/cowlog/tree/master/packages/dsl-framework)**
 # Usage
 I present the usage of the library with the example below; there are many ways to use it, let's start with the most
 practically applicable one.

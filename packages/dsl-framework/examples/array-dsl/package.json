@@ -21,7 +21,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vidaxl-com/cowlog.git"
+    "url": "git+https://github.com/311ecode/cowlog.git"
   },
   "keywords": [
     "curry",
@@ -33,9 +33,9 @@
   "author": "Imre Toth",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/vidaxl-com/cowlog/issues"
+    "url": "https://github.com/311ecode/cowlog/issues"
   },
-  "homepage": "https://github.com/vidaxl-com/cowlog/tree/master/packages/dsl-framework/examples/array-dsl",
+  "homepage": "https://github.com/311ecode/cowlog/tree/master/packages/dsl-framework/examples/array-dsl",
   "dependencies": {
     "arr-diff": "^4.0.0",
     "arr-xor": "^1.0.1",

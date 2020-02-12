@@ -1,4 +1,5 @@
 /* eslint-env mocha */
+require('cowlog')();
 const shell = require('shelljs')
 const dfp = require('directory-fixture-provider')
 const path = require('path')

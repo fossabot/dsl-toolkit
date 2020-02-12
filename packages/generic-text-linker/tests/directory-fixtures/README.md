@@ -1,12 +1,12 @@
 <!--- destination qa rewrite begin -->
 ### QA
-[![CircleCI](https://circleci.com/gh/vidaxl-com/cowlog/tree/master.svg?style=svg)](https://circleci.com/gh/vidaxl-com/cowlog/tree/master)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/d3fce811aecbe5c73ffb/test_coverage)](https://codeclimate.com/github/vidaxl-com/cowlog/test_coverage)
-[![Maintainability](https://api.codeclimate.com/v1/badges/d3fce811aecbe5c73ffb/maintainability)](https://codeclimate.com/github/vidaxl-com/cowlog/maintainability)
+[![CircleCI](https://circleci.com/gh/311ecode/cowlog/tree/master.svg?style=svg)](https://circleci.com/gh/311ecode/cowlog/tree/master)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/d3fce811aecbe5c73ffb/test_coverage)](https://codeclimate.com/github/311ecode/cowlog/test_coverage)
+[![Maintainability](https://api.codeclimate.com/v1/badges/d3fce811aecbe5c73ffb/maintainability)](https://codeclimate.com/github/311ecode/cowlog/maintainability)
 <!--- 
-[![Known Vulnerabilities](https://snyk.io/test/github/vidaxl-com/cowlog/badge.svg?targetFile=package.json)](https://snyk.io/test/github/vidaxl-com/cowlog?targetFile=package.json)
+[![Known Vulnerabilities](https://snyk.io/test/github/311ecode/cowlog/badge.svg?targetFile=package.json)](https://snyk.io/test/github/311ecode/cowlog?targetFile=package.json)
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fvidaxl-com%2Fcowlog.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fvidaxl-com%2Fcowlog?ref=badge_shield)
-[![Greenkeeper badge](https://badges.greenkeeper.io/vidaxl-com/cowlog.svg)](https://greenkeeper.io/)
+[![Greenkeeper badge](https://badges.greenkeeper.io/311ecode/cowlog.svg)](https://greenkeeper.io/)
 -->
 <!--- destination qa rewrite end -->
 
@@ -113,5 +113,5 @@ I know it is against all good practice, but don't forget cowlog is used in
 developmnet time only.
 
 <!--- source part of cowlog begin -->
-This document is part of the [Cowlog](https://github.com/vidaxl-com/cowlog) project.
+This document is part of the [Cowlog](https://github.com/311ecode/cowlog) project.
 <!--- source part of cowlog end -->
