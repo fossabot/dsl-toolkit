@@ -2,6 +2,9 @@
   "devDependencies": {
     "codeclimate-test-reporter": "^0.5.1",
     "depcheck": "^0.9.2",
+    "diff": "^4.0.2",
+    "execa": "^4.0.0",
+    "generic-text-linker": "^1.6.62",
     "lerna": "^3.20.2",
     "license-checker": "^25.0.1",
     "nyc": "^15.0.0"
@@ -37,8 +40,5 @@
       "pre-push": "npm test"
     }
   },
-  "dependencies": {
-    "recursive-readdir": "^2.2.2",
-    "sha1": "^1.1.1"
-  }
+  "dependencies": {}
 }
