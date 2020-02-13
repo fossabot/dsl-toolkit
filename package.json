@@ -6,6 +6,7 @@
     "license-checker": "^25.0.1",
     "nyc": "^15.0.0"
   },
+
   "scripts": {
     "test-dev": "node_modules/.bin/lerna run test-dev",
     "test-dev-unit": "node_modules/.bin/lerna run test-dev-unit",
@@ -36,6 +37,5 @@
       "post-merge": "npm test",
       "pre-push": "npm test"
     }
-  },
-  "dependencies": {}
+  }
 }
