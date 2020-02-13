@@ -9,10 +9,8 @@ environment:
 
 references:
   common_steps: &common_steps
-
     environment:
           BASH_ENV: "~/.bashrc"
-
     steps:
       - checkout
       - run: apt-get update && apt-get -y install expect
@@ -20,7 +18,22 @@ references:
       - run: ssh-keyscan -H github.com >> ~/.ssh/known_hosts
       - run: git config --global user.email "you@example.com" && git config --global user.name "yn"
       - run: npm install
+      - run: ./bin/node-modules-cache-key.js > ./npm-hash
+      - restore_cache:
+          keys:
+            - deps-{{ checksum "npm-hash" }}
       - run: npm run test-all && echo 1 > /tmp/test
+      - save_cache:
+          key: deps-{{ checksum "npm-hash" }}
+          paths:
+            - packages/cowlog/node_modules
+            - packages/directory-fixture-provider/node_modules
+            - packages/dsl-framework/node_modules
+            - packages/generic-text-linker/node_modules
+            - packages/refresh-me/node_modules
+            - packages/require-a-lot/node_modules
+            - packages/dsl-framework/examples/array-dsl/node_modules
+            - packages/dsl-framework/examples/auto-publish/parenting/node_modules
       - store_artifacts:
           path: coverage
           destination: prefix
