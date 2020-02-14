@@ -22,10 +22,6 @@ references:
           keys:
             - deps-{{ checksum "npm-hash" }}
       - run: npm install
-      - run: ./bin/node-modules-cache-key.js > ./npm-hash
-      - restore_cache:
-          keys:
-            - deps-{{ checksum "npm-hash" }}
       - run: npm run test-all && echo 1 > /tmp/test
       - save_cache:
           key: deps-{{ checksum "npm-hash" }}
