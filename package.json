@@ -40,5 +40,7 @@
       "pre-push": "npm test"
     }
   },
-  "dependencies": {}
+  "dependencies": {
+    "shelljs": "^0.8.3"
+  }
 }
