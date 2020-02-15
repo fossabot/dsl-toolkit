@@ -43,7 +43,7 @@ module.exports = exports = unlimitedCurry((e, parameters) => {
   return {
     tmpSubFolder,
     get: function (fixtureDirectory) {
-      let fixturePath = module.getFixturePath(fixturesRoot, fixtureDirectory)
+      const fixturePath = module.getFixturePath(fixturesRoot, fixtureDirectory)
       if (!directoryExists(fixturePath)) {
         mkdirp(fixturePath)
       }
@@ -52,7 +52,7 @@ module.exports = exports = unlimitedCurry((e, parameters) => {
 you might not want to test with no files right?`)
       }
 
-      let dir = path.join(module._destinationDirecoryRoot, fixtureDirectory)
+      const dir = path.join(module._destinationDirecoryRoot, fixtureDirectory)
       module._destinationDirecory = dir
 
       mkdirp(dir)
@@ -78,13 +78,13 @@ you might not want to test with no files right?`)
           const changeNumbers = { deleted: 0, changed: 0, new: 0 }
           let changeTotals = 0
           Object.keys(fixtureContent).forEach((fixtureFilePath) => {
-            let changed = destinationContent[fixtureFilePath] !== fixtureContent[fixtureFilePath]
+            const changed = destinationContent[fixtureFilePath] !== fixtureContent[fixtureFilePath]
             if (changed) {
               changeList[fixtureFilePath] = 'changed'
               changeNumbers.changed++
               changeTotals++
             }
-            let deleted = typeof destinationContent[fixtureFilePath] === 'undefined'
+            const deleted = typeof destinationContent[fixtureFilePath] === 'undefined'
             if (deleted) {
               changeList[fixtureFilePath] = 'deleted'
               changeNumbers.deleted++
@@ -100,7 +100,7 @@ you might not want to test with no files right?`)
           })
 
           const changed = !isEmpty(changeList)
-          let returnObject = {
+          const returnObject = {
             paths: {
               destination: module._destinationDirecoryRoot,
               fixtures: fixturesRoot
@@ -158,10 +158,10 @@ module.getFixtureContent = function (fixturesRoot, fixtureDirectory) {
 
 module.contentsFactory = (rootFolder, filesArray) => {
   return () => {
-    let returnObject = {}
+    const returnObject = {}
 
     filesArray.forEach((filePath) => {
-      let fullFilePath = rootFolder ? path.join(rootFolder, filePath) : filePath
+      const fullFilePath = rootFolder ? path.join(rootFolder, filePath) : filePath
 
       if (fs.existsSync(fullFilePath)) {
         returnObject[filePath] = fs.readFileSync(fullFilePath).toString()
@@ -175,9 +175,9 @@ module.contentsFactory = (rootFolder, filesArray) => {
 }
 
 module.loadFiles = function (directoryRoot, files) {
-  let returnValue = {}
+  const returnValue = {}
   files.forEach(function (file) {
-    let relevantPathPiece = file.replace(directoryRoot, '')
+    const relevantPathPiece = file.replace(directoryRoot, '')
     returnValue[relevantPathPiece.slice(1, relevantPathPiece.length)] = fs.readFileSync(file).toString()
   })
 
