@@ -1,6 +1,6 @@
 {
   "groups": {
-    "cowlog": {
+    "dsl-toolkit": {
       "packages": [
         "packages/cowlog/package.json",
         "packages/directory-fixture-provider/package.json",

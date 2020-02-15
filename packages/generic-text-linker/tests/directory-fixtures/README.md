@@ -18,7 +18,7 @@ where from this tool called. **All the log messages** per process are
 **collected to a separate file**.
 <!--- source chat rewrite begin -->
 ### Chat
-[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/cowlog/Lobby)
+[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/dsl-toolkit/Lobby)
 <!--- source chat rewrite end -->
 # Cowlog
 
@@ -28,7 +28,7 @@ on the console output. The project is meant to be used solely in a
 **nodejs environment** as these days browsers provide really neat standard
 toolsets for debugging your applications.
 
-We want cowlog to be usable in any circumstances without problems therfore we
+We want dsl-toolkit to be usable in any circumstances without problems therfore we
 have 100% code coverage.
 
 
@@ -86,9 +86,9 @@ library.
 |                                                                                                    |
 | _-_-_-_-_-_-_-_-_-_-_-_                                                                            |
 |                                                                                                    |
-| called from:/home/it/dev/misc/cowlog/packages/cowlog/node_modules/bottlejs/dist/bottle.js:205:89   |
-| stack trace:/tmp/cowlog/hashes/1a/aca79320ae42540da2a83d1d1c7b6d_stack-trace.log                   |
-| session log:/tmp/cowlog/hashes/b6/cda5f0931f0f85054b0f59b0d5e749_session.log                       |
+| called from:/home/it/dev/misc/dsl-toolkit/packages/dsl-toolkit/node_modules/bottlejs/dist/bottle.js:205:89   |
+| stack trace:/tmp/dsl-toolkit/hashes/1a/aca79320ae42540da2a83d1d1c7b6d_stack-trace.log                   |
+| session log:/tmp/dsl-toolkit/hashes/b6/cda5f0931f0f85054b0f59b0d5e749_session.log                       |
 \ logged at:2018-06-20T20:54:17.782Z                                                                 /
  ----------------------------------------------------------------------------------------------------
     \
@@ -113,5 +113,5 @@ I know it is against all good practice, but don't forget cowlog is used in
 developmnet time only.
 
 <!--- source part of cowlog begin -->
-This document is part of the [Cowlog](https://github.com/311ecode/cowlog) project.
+This document is part of the [Cowlog](https://github.com/311ecode/dsl-toolkit) project.
 <!--- source part of cowlog end -->

@@ -12,9 +12,9 @@ module.exports = exports = function (dir, beginning, closing, newValue = null) {
     /* istanbul ignore else */
     if (newValue) {
       files.forEach(function (file) {
-        let result = linkerFile(file, beginning, closing, newValue)
+        const result = linkerFile(file, beginning, closing, newValue)
         // let {returnData} = result
-        let { changed } = result.meta
+        const { changed } = result.meta
         /* istanbul ignore else */
         if (changed.all) {
           returnValue[file] = changed
@@ -31,7 +31,7 @@ module.exports = exports = function (dir, beginning, closing, newValue = null) {
       files.forEach(function (file) {
         /* istanbul ignore else */
         if (!firstFound) {
-          let result = linkerFile(file, beginning, closing)
+          const result = linkerFile(file, beginning, closing)
           /* istanbul ignore else */
           if (module.clearWhitespace(result.returnData)) {
             returnValue = result.returnData
