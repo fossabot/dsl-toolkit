@@ -3,8 +3,8 @@ const clone = require('clone')
 const objectPath = require('object-path')
 
 module.exports = exports = function (inputString, beginning, closing, newValue = null) {
-  let templateBeginningArray = sstlm(inputString, beginning).reverse()
-  let templateEndArray = sstlm(inputString, closing).reverse()
+  const templateBeginningArray = sstlm(inputString, beginning).reverse()
+  const templateEndArray = sstlm(inputString, closing).reverse()
 
   objectPath.set(module, 'meta.changed', {
     all: false,
@@ -24,7 +24,7 @@ and the closing tag should be   "${closing}"
   /* istanbul ignore else */
   if (newValue) {
     templateBeginningArray.forEach(function (templateBeginning, index) {
-      let templateEnd = templateEndArray[index]
+      const templateEnd = templateEndArray[index]
       /* istanbul ignore else */
       if (templateBeginning >= 0 && templateEnd && templateBeginning < templateEnd) {
         /* istanbul ignore else */
@@ -51,7 +51,7 @@ and the closing tag should be   "${closing}"
   if (!newValue) {
     let resultAltered = false
     templateBeginningArray.forEach(function (templateBeginning, index) {
-      let templateEnd = templateEndArray[index]
+      const templateEnd = templateEndArray[index]
       /* istanbul ignore else */
       if (!resultAltered) {
         returnData = returnData.slice(templateBeginning + 1, templateEnd)
@@ -80,13 +80,13 @@ module.backToSting = function (array) {
 
 module.makeReturnObject = function (returnData) {
   returnData = returnData.join('\n')
-  let meta = module.buildMeta()
+  const meta = module.buildMeta()
 
   return { returnData, meta }
 }
 
 module.buildMeta = function () {
-  let meta = module.meta
+  const meta = module.meta
   delete module.meta
 
   return meta

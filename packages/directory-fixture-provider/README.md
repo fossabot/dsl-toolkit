@@ -1,17 +1,17 @@
 <!--- destination qa rewrite begin -->
 ### QA
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
-[![CircleCI](https://circleci.com/gh/311ecode/cowlog/tree/master.svg?style=svg)](https://circleci.com/gh/311ecode/cowlog/tree/master)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/a25454343626ec0c7a70/test_coverage)](https://codeclimate.com/github/311ecode/cowlog/test_coverage)
-[![Maintainability](https://api.codeclimate.com/v1/badges/a25454343626ec0c7a70/maintainability)](https://codeclimate.com/github/311ecode/cowlog/maintainability)
-[![Greenkeeper badge](https://badges.greenkeeper.io/311ecode/cowlog.svg)](https://greenkeeper.io/)
+[![CircleCI](https://circleci.com/gh/311ecode/dsl-toolkit/tree/master.svg?style=svg)](https://circleci.com/gh/311ecode/dsl-toolkit/tree/master)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/a25454343626ec0c7a70/test_coverage)](https://codeclimate.com/github/311ecode/dsl-toolkit/test_coverage)
+[![Maintainability](https://api.codeclimate.com/v1/badges/a25454343626ec0c7a70/maintainability)](https://codeclimate.com/github/311ecode/dsl-toolkit/maintainability)
+[![Greenkeeper badge](https://badges.greenkeeper.io/311ecode/dsl-toolkit.svg)](https://greenkeeper.io/)
 <!--- destination qa rewrite end -->
-[![Known Vulnerabilities](https://snyk.io/test/github/311ecode/cowlog/badge.svg?targetFile=packages%2Fdirectory-fixture-provider%2Fpackage.json)](https://snyk.io/test/github/311ecode/cowlog?targetFile=packages%2Fdirectory-fixture-provider%2Fpackage.json)
-[![HitCount](http://hits.dwyl.com/vidaxl.com/cowlog.svg)](http://hits.dwyl.com/311ecode/cowlog)
+[![Known Vulnerabilities](https://snyk.io/test/github/311ecode/dsl-toolkit/badge.svg?targetFile=packages%2Fdirectory-fixture-provider%2Fpackage.json)](https://snyk.io/test/github/311ecode/dsl-toolkit?targetFile=packages%2Fdirectory-fixture-provider%2Fpackage.json)
+[![HitCount](http://hits.dwyl.com/vidaxl.com/dsl-toolkit.svg)](http://hits.dwyl.com/311ecode/dsl-toolkit)
 [![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lernajs.io/)
 
 <!---
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fvidaxl-com%2Fcowlog.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fvidaxl-com%2Fcowlog?ref=badge_shield)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fvidaxl-com%2Fdsl-toolkit.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fvidaxl-com%2Fdsl-toolkit?ref=badge_shield)
 -->
 
 # Installation
@@ -46,7 +46,7 @@ const fixtureData = fixtureDirectoryProvider.get('directory2')
 // fixtureData contains an object where
 /*
 { dir: '/tmp/directory-fixture-provider-destination/KzXwBFDdtAmh/',
-  fixturePath: '/home/it/dev/misc/cowlog/packages/directory-fixture-provider/tests/directory-fixtures/',
+  fixturePath: '/home/it/dev/misc/dsl-toolkit/packages/directory-fixture-provider/tests/directory-fixtures/',
   getFixtureFiles: [Function: getFixtureFiles],
   getDestinationFiles: [Function: getDestinationFiles],
   getStatus: [Function: getStatus],
