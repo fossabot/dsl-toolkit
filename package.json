@@ -7,21 +7,22 @@
     "nyc": "^15.0.0"
   },
   "scripts": {
-    "test-dev": "node_modules/.bin/lerna run test-dev",
-    "test-dev-unit": "node_modules/.bin/lerna run test-dev-unit",
-    "test-old": "node_modules/.bin/nyc --reporter=lcov --reporter=clover --reporter=text node_modules/.bin/lerna run test-old",
-    "test-project": "npm run license-check && node_modules/.bin/depcheck --ignores 'rimfaf,husky,codeclimate-test-reporter' && npm run standard-fix ",
-    "test": "node_modules/.bin/lerna clean --yes && node_modules/.bin/lerna bootstrap --no-ci && npm run test-project && node_modules/.bin/nyc --reporter=lcov --reporter=clover --reporter=text node_modules/.bin/lerna run test-all",
+    "test-dev": "npx lerna run test-dev",
+    "test-dev-unit": "npx lerna run test-dev-unit",
+    "test-old": "npx nyc --reporter=lcov --reporter=clover --reporter=text npx lerna run test-old",
+    "test-project": "npm run license-check && npx depcheck --ignores 'rimfaf,husky,codeclimate-test-reporter' && npm run standard-fix ",
+    "test-clean": "npx lerna clean --yes && npx lerna bootstrap --no-ci",
+    "test": "npm run test-project && npx nyc --reporter=lcov --reporter=clover --reporter=text npx lerna run --concurrency=1 test-all",
     "test-all": "npm test",
     "test-all-dev": "npm run test-project && npm run test-dev",
     "test-compiled": "npm run test-project && npm test",
     "build": "npm run build-src && npm run build-test",
-    "build-src": "node_modules/.bin/lerna run build-src",
-    "build-test": "node_modules/.bin/lerna run build-test",
-    "docs-gen": "node_modules/.bin/lerna run docs-gen",
-    "prepublish": "node_modules/.bin/lerna run publish",
-    "standard-fix": "node_modules/.bin/lerna run standard-fix",
-    "license-check": "node_modules/.bin/license-checker --failOn unknown --summary"
+    "build-src": "npx lerna run build-src",
+    "build-test": "npx lerna run build-test",
+    "docs-gen": "npx lerna run docs-gen",
+    "prepublish": "npx lerna run publish",
+    "standard-fix": "npx lerna run standard-fix",
+    "license-check": "npx license-checker --failOn unknown --summary"
   },
   "nyc": {
     "exclude": [
