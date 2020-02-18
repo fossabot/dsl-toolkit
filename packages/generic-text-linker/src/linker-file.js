@@ -12,7 +12,7 @@ module.exports = exports = function (file, beginning, closing, newValue = null) 
   // }
   // else
   // {
-  let string = fs.readFileSync(file, { encoding: 'utf8' })
+  const string = fs.readFileSync(file, { encoding: 'utf8' })
   // cache.set(file, string)
   // debug(`hit: ${file}`)
   // }
@@ -28,17 +28,17 @@ module.exports = exports = function (file, beginning, closing, newValue = null) 
     fs.writeFileSync(file, linkerResult.returnData, { encoding: 'utf8' })
   }
   const fileInfoServices = new Bottle('fileInfoServices')
-  let fileInfo = fileInfoServices.container
+  const fileInfo = fileInfoServices.container
   linkerResult.meta.fileInfo = fileInfo
 
   fileInfoServices.service('path', function () {
-    let path = String(file)
+    const path = String(file)
 
     return path
   })
 
   fileInfoServices.service('type', function (path) {
-    let type = String(mime.lookup(path.toString()))
+    const type = String(mime.lookup(path.toString()))
 
     return type
   }, 'path')
