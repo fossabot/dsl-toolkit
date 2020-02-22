@@ -24,7 +24,8 @@ const getCommandSequence = (type = 'javascript') => {
       const currentBranch = getCurrentBranch()
       const modParams = {
         // actualVersion,
-        latestVersion, testBranch }
+        latestVersion, testBranch
+      }
       // Sometimes it puts a space after the version number in the name of the test branch.
       Object.keys(modParams).forEach(tagName => {
         modParams[tagName] = modParams[tagName].replace(/\s/g, '')
@@ -33,8 +34,8 @@ const getCommandSequence = (type = 'javascript') => {
       return [
         `git checkout -b ${testBranch}`,
         `npm install ${dependencyName}@${modParams.latestVersion}`,
-        `npm test`,
-        `git add package.json `,
+        'npm test',
+        'git add package.json ',
         `git commit --no-verify -m "Updated package ${name} dependency to: ${dependencyName}@${latestVersion}."`, // +
         // `at path:${!relativePath ? './' : relativePath}`,
         `git checkout ${currentBranch}`,
@@ -51,7 +52,7 @@ const update = async (dependencies) => {
 
     let allFine = true
     let testBranch = ''
-    let updateLog = []
+    const updateLog = []
     for (let i = 0; dependencyNames.length > i; i++) {
       const dependencyName = dependencyNames[i]
       const actualVersion = makeRealSemver(dependencies[dependencyName])

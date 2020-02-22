@@ -3,7 +3,7 @@ const safetyExecutor = require('./detached-executor')
 const container = require('./container/core')
 // const f = function
 const coreFactory = () => {
-  let core = function me (callback, state = false) {
+  const core = function me (callback, state = false) {
     let { coreData } = core
     state = state || (function () {
       // if(coreData.command.has('factory')){
@@ -22,7 +22,7 @@ const coreFactory = () => {
       if (callerArguments.length) {
         state.setCommandArguments(callerArguments)
       }
-      let data = callerRaw.data = state.getFrom(0)
+      const data = callerRaw.data = state.getFrom(0)
       if (!coreData.command.has('noPromoises')) {
         callerRaw.p = require('./caller-promise-factory-factory')(state, callback)
       }

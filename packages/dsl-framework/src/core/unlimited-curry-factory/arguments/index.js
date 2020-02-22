@@ -6,8 +6,8 @@ const process = (parameters) => (command, getProcess, defaultValue) => {
     return commands.map(c => process(parameters)(c, getProcess, defaultValue))
   }
   if (parameters) {
-    let doWeHaveTheCommand = parameters.command.has(command)
-    let returnValue = doWeHaveTheCommand ? !!parameters.command.getArguments(command) : defaultValue
+    const doWeHaveTheCommand = parameters.command.has(command)
+    const returnValue = doWeHaveTheCommand ? !!parameters.command.getArguments(command) : defaultValue
     if (getProcess === 'boolean') { return doWeHaveTheCommand }
     if (returnValue === defaultValue) { return returnValue }
 

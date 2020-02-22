@@ -15,7 +15,7 @@ module.exports = exports =
    */
   (commandValue, getProcess = 'allEntries') => {
     commandValue = Array.isArray(commandValue) && Array.isArray(commandValue[0]) ? commandValue : [commandValue]
-    let dataToProcess = getProcess.startsWith('first') ? commandValue[0]
+    const dataToProcess = getProcess.startsWith('first') ? commandValue[0]
       : getProcess.startsWith('last') ? commandValue[commandValue.length - 1]
         : getProcess.startsWith('all') ? commandValue : commandValue
 
