@@ -17,7 +17,7 @@ module.exports = exports = (object) => dslF(function (returnCode, data) {
   const noChildren = data.command.has('noChildren'); const keysPaths = Object.keys(flat(object))
 
   const result = arrayDsl(keysPaths.map(path => {
-    let pathArray = path.split('.')
+    const pathArray = path.split('.')
     pathArray.pop()
     return pathArray
   })).unique()

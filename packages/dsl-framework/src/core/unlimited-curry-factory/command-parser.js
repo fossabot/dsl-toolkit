@@ -3,10 +3,10 @@ module.exports = exports = (returnObject) => {
   const baseObject = {
     init: () => {
       const baseKind = (kind) => function () {
-        let command = arguments[0]
+        const command = arguments[0]
         if (Array.isArray(command) || arguments.length > 1) {
           // command = getArrayData(arguments)
-          return baseObject[`${kind === 'some' ? 'has' : 'get'}`]['more'](command)
+          return baseObject[`${kind === 'some' ? 'has' : 'get'}`].more(command)
         }
         return returnObject.data.returnArrayChunks[kind](argumentArray => argumentArray[0] === command)
       }
@@ -45,7 +45,7 @@ module.exports = exports = (returnObject) => {
       baseObject.hasXor = baseObject.has.xor
 
       const toObjectKind = (kind) => function () {
-        let returnObject = {}
+        const returnObject = {}
         getArrayData(arguments).forEach(entry => {
           returnObject[entry] = baseObject[kind](entry)
         })

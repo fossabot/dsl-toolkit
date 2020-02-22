@@ -25,7 +25,7 @@ module.exports = exports = () => ({
     data.repeate.parent = data
 
     const me = this
-    let returnObject = { data, getFrom: me.getFrom }
+    const returnObject = { data, getFrom: me.getFrom }
     returnObject.command = require('../../command-parser')(returnObject)
     const arg = require('../../arguments')(returnObject)
     returnObject.arguments = arg

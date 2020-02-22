@@ -8,7 +8,6 @@ const isDirectory = require('is-directory')
 const shell = require('shelljs')
 const dfp =  require('../../src/index')
 
-
 describe('Testing directory-fixture-provider', function () {
 
   describe('testing basic functionalities', function () {
@@ -115,13 +114,18 @@ describe('Testing directory-fixture-provider', function () {
         })
 
         it('Copying files to the same space with the "permanent" command ereasing first', function () {
-            shell.touch(path.join(dfp(fixturesRoot)('permanent')().get('./').dir, 'new'))
-            fixtureData = dfp(fixturesRoot)('permanent', 'cleanFirst')().get('./')
-            if (fixtureData.getStatus().changed) {
-                throw String('Something is terribly worng!')
-            }
-            const dir = fixtureData.dir
-            shell.rm('-rf', `${dir}*`)
+          shell.touch(path.join(dfp(fixturesRoot)('permanent')().get('./').dir, 'new'))
+          fixtureData = dfp(fixturesRoot)('permanent', 'cleanFirst')().get('./')
+          if (fixtureData.getStatus().changed) {
+            throw String('Something is terribly worng!')
+          }
+          const dir = fixtureData.dir
+          shell.rm('-rf', `${dir}*`)
+        })
+
+        it('tests the .noFileReads parameter', function () {
+          const dir = dfp(fixturesRoot)('noFileReads')().get('./')
+          console.log(dir)
         })
 
         // it('testing exclude', function () {

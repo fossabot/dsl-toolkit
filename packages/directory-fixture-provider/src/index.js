@@ -19,6 +19,7 @@ module.exports = exports = unlimitedCurry((e, parameters) => {
 
   // const commands = parameters.getFrom(1, parameters.data)
   const isPermanent = parameters.command.has('permanent')
+  const noFileReads = parameters.command.has('noFileReads')
   const permanentParam = isPermanent ? parameters.command.getArguments('permanent')[0][0] : false
   // implement this feature
   // const isExclude = parameters.command.has('exclude')
@@ -40,7 +41,7 @@ module.exports = exports = unlimitedCurry((e, parameters) => {
       fixturesRoot)
   }
 
-  return {
+  const retValue = {
     tmpSubFolder,
     get: function (fixtureDirectory) {
       const fixturePath = module.getFixturePath(fixturesRoot, fixtureDirectory)
@@ -65,6 +66,9 @@ you might not want to test with no files right?`)
       const returnObject = {
         dir,
         fixturePath,
+      }
+      // if(!noFileReads)
+      Object.assign(returnObject, {
         getFixtureFiles: function () {
           return module.loadFiles(fixturesRoot, recursiveReaddir(module.getFixturePath(fixturesRoot, fixtureDirectory)))
         },
@@ -138,12 +142,14 @@ you might not want to test with no files right?`)
 
           return returnObject
         }
-      }
-      returnObject.getFixtureContent = module.getFixtureContent(fixturesRoot, fixtureDirectory)
+      })
+      if(!noFileReads) returnObject.getFixtureContent = module.getFixtureContent(fixturesRoot, fixtureDirectory)
 
       return returnObject
     }
   }
+
+  return retValue
 })
 
 module.getFixturePath = function (fixturesRoot, fixtureDirectory) {

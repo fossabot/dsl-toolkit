@@ -1,19 +1,22 @@
 {
   "devDependencies": {
+    "array-dsl": "^1.6.59",
     "codeclimate-test-reporter": "^0.5.1",
     "depcheck": "^0.9.2",
     "diff": "^4.0.2",
+    "directory-fixture-provider": "^1.6.63",
     "execa": "^4.0.0",
     "generic-text-linker": "^1.6.62",
     "lerna": "^3.20.2",
     "license-checker": "^25.0.1",
-    "nyc": "^15.0.0"
+    "nyc": "^15.0.0",
+    "shelljs": "^0.8.3"
   },
   "scripts": {
     "test-dev": "npx lerna run test-dev",
     "test-dev-unit": "npx lerna run test-dev-unit",
     "test-old": "npx nyc --reporter=lcov --reporter=clover --reporter=text npx lerna run test-old",
-    "test-project": "npm run license-check && npx depcheck --ignores 'rimfaf,husky,codeclimate-test-reporter' && npm run standard-fix ",
+    "test-project": "npm run license-check && npx depcheck --ignores 'rimfaf,husky,codeclimate-test-reporter,directory-fixture-provider' && npm run standard-fix ",
     "test-clean": "npx lerna clean --yes && npx lerna bootstrap --no-ci",
     "test": "npm run test-project && npx nyc --reporter=lcov --reporter=clover --reporter=text npx lerna run --concurrency=1 test-all",
     "test-all": "npm test",

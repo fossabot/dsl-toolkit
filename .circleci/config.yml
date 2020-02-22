@@ -20,8 +20,9 @@ references:
       - run: ./bin/node-modules-cache-key.js > ./npm-hash
       - restore_cache:
           keys:
-            - deps-{{ checksum "npm-hash" }}
-      - run: npm install
+            - deps-v1-{{ checksum "npm-hash" }}
+            - deps-v1
+      - run: npm install && npm run test-clean
       - run: npm run test-all && echo 1 > /tmp/test
       - save_cache:
           key: deps-{{ checksum "npm-hash" }}
@@ -41,6 +42,7 @@ references:
       - store_test_results:
           path: coverage/lcov-report/
       - run: node_modules/codeclimate-test-reporter/bin/codeclimate.js < ./coverage/lcov.info && echo 1 > /tmp/coverage
+      - run: bin/github.js < ./coverage/lcov.info && echo 1 > /tmp/coverage
 
 
 jobs:
