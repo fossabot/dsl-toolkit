@@ -22,7 +22,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/vidaxl-com/dsl-toolkit/tree/master/packages/refresh-me"
+    "url": "https://github.com/dsl-toolkit/refresh-me.git"
   },
   "keywords": [
     "greenkeeper"
@@ -30,9 +30,9 @@
   "author": "Imre Toth",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/311ecode/dsl-toolkit/issues"
+    "url": "https://github.com/dsl-toolkit/refresh-me/issues"
   },
-  "homepage": "https://github.com/311ecode/dsl-toolkit/tree/master/packages/refresh-me",
+  "homepage": "https://github.com/dsl-toolkit/refresh-me",
   "dependencies": {
     "diff": "^4.0.2",
     "latest-version": "^5.1.0",
