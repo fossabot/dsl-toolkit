@@ -22,7 +22,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/311ecode/dsl-toolkit/tree/master/packages/directory-fixture-provider"
+    "url": "https://github.com/dsl-toolkit/directory-fixture-provider.git"
   },
   "keywords": [
     "testing",
@@ -39,9 +39,9 @@
   "author": "Imre Toth",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/imre-vidaxl/directory-fixture-provider/issues"
+    "url": "https://github.com/dsl-toolkit/array-dsl/issues"
   },
-  "homepage": "https://github.com/311ecode/dsl-toolkit/tree/master/packages/directory-fixture-provider",
+  "homepage": "https://github.com/dsl-toolkit/directory-fixture-provider",
   "dependencies": {
     "directory-exists": "^2.0.1",
     "dsl-framework": "^1.6.62",

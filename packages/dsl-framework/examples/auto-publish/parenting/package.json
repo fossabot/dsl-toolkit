@@ -21,7 +21,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/311ecode/dsl-toolkit.git"
+    "url": "https://github.com/dsl-toolkit/parenter.git"
   },
   "keywords": [
     "parent",
@@ -32,9 +32,9 @@
   "author": "Imre Toth",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/311ecode/dsl-toolkit/issues"
+    "url": "https://github.com/dsl-toolkit/parenter/issues"
   },
-  "homepage": "https://github.com/311ecode/dsl-toolkit/tree/master/packages/dsl-framework/examples/parenting",
+  "homepage": "https://github.com/dsl-toolkit/parenter",
   "dependencies": {
     "array-dsl": "^1.6.59",
     "dsl-framework": "^1.6.62",

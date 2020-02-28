@@ -22,9 +22,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/311ecode/dsl-toolkit.git"
+    "url": "https://github.com/dsl-toolkit/generic-text-linker.git"
   },
-  "homepage": "https://github.com/311ecode/dsl-toolkit/tree/master/packages/generic-text-linker",
+  "homepage": "https://github.com/dsl-toolkit/generic-text-linker",
   "keywords": [
     "linker",
     "linking",
@@ -37,7 +37,7 @@
   "author": "Imre Toth",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/imre-vidaxl/directory-fixture-provider/issues"
+    "url": "https://github.com/dsl-toolkit/refresh-me/issues"
   },
   "dependencies": {
     "bottlejs": "^1.7.2",
