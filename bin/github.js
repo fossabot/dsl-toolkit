@@ -1,21 +1,26 @@
 #!/usr/bin/env node
-const token = process.env.GITHUB_TOKEN || '9c8f3ccbcfc8607e7c5b54a0835baafede840cd2'
+const token = process.env.GITHUB_TOKEN || '5927a7ae00074e4d503b655c41a5ff09e46b7a48'
 const s = require('shelljs')
+const op = require('object-path')
 const { request } = require("@octokit/request")
 const packages = require('./lib/get-packages')
-const pacageNames = packages.map(e=>require(`../${e}/package.json`).name).sort()
+const pacageNames = packages.map(e=>require(`../${e}/package.json`).name)
+const reponsitories = packages.map(e=>require(`../${e}/package.json`).repository.url)
 const diff = require('diff')
 const authorization = `token ${token}`
 const gitUtilityCreator = require('./lib/git-utility')
 const dfp = require('directory-fixture-provider')
 const {join} = require('path');
+
 const getNewFixtureDirectory = (path) => {
     const fixtureDirectoryProvider = dfp(path).noFileReads()
     return fixtureDirectoryProvider.get('./').dir
 }
+
 const splitGitRepository = (gitUtility, currentBranch) => {
-    packages.forEach(package => {
+    packages.forEach((package, index) => {
         gitUtility.subDirectoryToSeparateBranch(currentBranch, package)
+        gitUtility.pushSeparatedBranch(currentBranch, package)
     })
 }
 
@@ -36,7 +41,7 @@ const splitGitRepository = (gitUtility, currentBranch) => {
     const existingRepos = result.data.map(e=>e.name).sort()
     const toCreate = diff.diffArrays(pacageNames.sort(), existingRepos.sort()).filter(e=>e.removed).map(e=>e.value).flat()
 
-    toCreate.forEach( async repository=> await request("POST /orgs/dsl-toolkit/repos",
+    toCreate.forEach( async (repository)=> await request("POST /orgs/dsl-toolkit/repos",
         {headers: {authorization}, name: repository}));
 
     const directory = getNewFixtureDirectory(baseFixtureDirectory);
@@ -47,16 +52,16 @@ const splitGitRepository = (gitUtility, currentBranch) => {
         gitUtility.getAllBranches(),
         gitUtility.getAllBranchesWithoutRemotes(),
     )
+
     const currentBranch = gitUtility.getCurrentBranch()
     const allBranches = gitUtility.getAllBranchesWithoutRemotes()
+
     splitGitRepository(gitUtility, currentBranch);
 
     allBranches.filter(e=>e!==currentBranch).forEach(branch => {
         gitUtility.checkoutBranch(branch)
-        splitGitRepository(gitUtility, branch);git
+        splitGitRepository(gitUtility, branch)
     })
-
-
 
     console.log(`${pwd}`,directory)
     // gitUtility.subDirectoryToSeparateBranch(currentBranch)

@@ -5,7 +5,7 @@ module.exports = (directory) => {
     s.cd(directory);
 
     const ex = {
-        sexec: (command, config = {silent:false}) => s.exec(command, {silent:true, ...config}),
+        sexec: (command, config = {silent:true}) => s.exec(command, {silent:false, ...config}),
         removeEmptyLines: (output) => output.split('\n').filter(e=>e!=='').join(' '),
         exec: (command) => ex.removeEmptyLines(ex.sexec(command).stdout),
         stash: () => ex.exec('git stash'),
@@ -23,15 +23,32 @@ module.exports = (directory) => {
         createBranch: name => ex.exec(`git checkout -b ${name}`),
         getDirectory: () => directory,
         addRemote: packageName => ex.sexec(`git remote add ${packageName} git@github.com:dsl-toolkit/${packageName}.git`),
-        subDirectoryToSeparateBranch: (currentBranch, packageDirecroty) => {
-            const packageName = require(join(__dirname, '../..', packageDirecroty, 'package.json')).name
+        getPackageInfo: (currentBranch, packageDirecroty) => {
+            const packageInfo = require(join(__dirname, '../..', packageDirecroty, 'package.json'))
+            const packageName = packageInfo.name
             const newBranch = `${currentBranch}_${packageName}`
+
+            return {packageName, newBranch, packageInfo}
+        },
+        subDirectoryToSeparateBranch: (currentBranch, packageDirecroty) => {
+            const packageInfo = ex.getPackageInfo(currentBranch, packageDirecroty)
+            const {newBranch} = packageInfo
             ex.createBranch(newBranch)
             ex.filterBranch(packageDirecroty, newBranch)
+
+            return packageInfo
+        },
+        pushSeparatedBranch: (currentBranch, packageDirecroty) => {
+            const packageInfo = ex.getPackageInfo(currentBranch, packageDirecroty)
+            const {packageName, newBranch} = packageInfo
+
             ex.addRemote(packageName)
             ex.sexec(`git push -f ${packageName} ${newBranch}:${currentBranch}`)
             ex.checkoutBranch(currentBranch)
+
+            return packageInfo
         },
+
     }
 
     return ex
