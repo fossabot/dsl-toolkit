@@ -11,22 +11,20 @@ module.exports = (curryCallbackObject, expect, enviromentSupportsPromises, dslFr
        ()
        .data
 
-          const r = data.getSubcommand('a')().map((item, i) => {
-            const ddddd = item.command.get('ddddd')
-            const j = item.command.get('j')
-            return {ddddd, j}
-          })
+        const r = data.getSubcommand('a')().map((item, i) => {
+          const ddddd = item.command.get('ddddd')
+          const j = item.command.get('j')
+          return {ddddd, j}
+        })
 
-          console.log(r);
-          r.forEach((e,i) => {
-            if(e.ddddd[0] && e.ddddd[0][0]){
-              if(e.ddddd[0][0] === 'ddddd'){
-                throw 'that should have been dddd'
-              }
+        console.log(r);
+        r.forEach((e,i) => {
+          if(e.ddddd[0] && e.ddddd[0][0]){
+            if(e.ddddd[0][0] === 'ddddd'){
+              throw 'that should have been dddd'
             }
-          });
-
-
+          }
+        });
       })
     })
   })
