@@ -22,4 +22,4 @@ module.exports = (curryCallbackObject, expect, enviromentSupportsPromises, dslFr
       })
     })
   })
-  }
+    }
