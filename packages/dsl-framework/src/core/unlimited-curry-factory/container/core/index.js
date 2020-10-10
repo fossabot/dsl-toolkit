@@ -31,7 +31,7 @@ const getFrom = function (from, returnArrayChunks = []) {
         .filter(e => e !== false)
         .map(e => Array.from(e))
 
-      let result = intervals.map((e, i) => {
+      const result = intervals.map((e, i) => {
         const t = {}
         const c = e.map(e => {
           const order = e.split('.')[0]
@@ -41,8 +41,8 @@ const getFrom = function (from, returnArrayChunks = []) {
 
         return Object.keys(t)
       }).map((e, i) => {
-       return Array.from(e).map(e => ra[e])
-     }).map((e) => getFrom(0, e))
+        return Array.from(e).map(e => ra[e])
+      }).map((e) => getFrom(0, e))
 
       return result
     },
