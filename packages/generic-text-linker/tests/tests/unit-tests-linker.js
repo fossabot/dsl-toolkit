@@ -8,7 +8,7 @@ require('chai').should()
 describe('Testing', function () {
   describe('@linker', function () {
     let {linker} = require('../../src/index')
-    it('test liner', function () {
+    it('test liner default behaviour', function () {
       let result = linker(`
       bla-bla
       AAA
@@ -26,7 +26,27 @@ describe('Testing', function () {
 
       returnData.should.be.a('string').that.does.not.include('---')
       returnData.should.be.a('string').that.does.include('+++')
-      stlc(returnData, ['bla-bla', 'AAA', '+++', 'BBB', 'alb-alb'])
+      // stlc(returnData, ['bla-bla', 'AAA', '+++', 'BBB', 'alb-alb'])
+    })
+
+    it('test liner default behaviour faulty tags', function () {
+      let result = linker(`
+      bla-bla
+      AAA vv
+      ---
+      BBB nn
+      
+      alb-alb
+
+      `, 'AAA', 'BBB', '+++')
+      let {returnData} = result
+
+      let {changed} = result.meta
+      expect(changed.all).to.equal(false)
+
+      returnData.should.be.a('string').that.does.include('---')
+      returnData.should.be.a('string').that.does.not.include('+++')
+
     })
 
     it('test linker with more tags', function () {
