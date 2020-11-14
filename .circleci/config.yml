@@ -71,18 +71,14 @@ references:
       - store_test_results:
           path: coverage/lcov-report/
       - run: node_modules/codeclimate-test-reporter/bin/codeclimate.js < ./coverage/lcov.info && echo 1 > /tmp/coverage
+      - run: bin/github.js
 
 
 jobs:
-  node10:
-    docker:
-      - image: node:10
-    <<: [ *common_steps_upload ]
-
   node12:
     docker:
       - image: node:12
-    <<: [ *common ]
+    <<: [ *common_steps_upload ]
   node14:
     docker:
       - image: node:14
@@ -90,10 +86,6 @@ jobs:
   node15:
     docker:
       - image: node:15
-    <<: [ *common ]
-  node16:
-    docker:
-      - image: node:16
     <<: [ *common ]
 
 workflows:

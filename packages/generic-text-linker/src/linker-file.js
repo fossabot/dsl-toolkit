@@ -14,8 +14,8 @@ module.exports = exports = function (file, beginning, closing, newValue = null) 
   /* istanbul ignore else */
   if (linkerResult.meta.changed.all) {
     fs.writeFileSync(file, linkerResult.returnData, { encoding: 'utf8' })
-    while (fs.readFileSync(file,  { encoding: 'utf8' }) !== linkerResult.returnData){
-      //makes sure that it writes the content of the file, I haave not found a better way to do it yet.
+    while (fs.readFileSync(file, { encoding: 'utf8' }) !== linkerResult.returnData) {
+      // makes sure that it writes the content of the file, I haave not found a better way to do it yet.
       // https://www.daveeddy.com/2013/03/26/synchronous-file-io-in-nodejs/
       // so writeFileSync is not really sync.
       console.log('aaaa')
